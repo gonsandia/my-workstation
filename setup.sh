@@ -44,7 +44,6 @@ sudo apt install -y \
 ./software/install-git.sh
 ./software/install-gnome-applications.sh
 ./software/install-google-chrome.sh
-./software/install-gparted.sh
 ./software/install-htop.sh
 ./software/install-jetbrains-toolbox.sh
 ./software/install-ncdu.sh
@@ -59,8 +58,8 @@ sudo apt install -y \
 ./software/uninstall-applications-by-default.sh
 
 # Custom config
+./custom/gsettings-modifications.sh
 ./custom/gtile-gnome-shell-extension.sh
-./custom/install-dotfiles.sh
 
 echo
 echo "################################################################"

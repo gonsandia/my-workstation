@@ -32,14 +32,18 @@ if ! [ -a "~/.zshrc" ]; then
 
     cd ~/.oh-my-zsh/custom/plugins
     git clone https://github.com/zsh-users/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-completions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
     git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins autoupdate
+    git clone https://github.com/romkatv/powerlevel10k.git
 
     cd ${SETUP_DIR}
 
-    sed -i "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/g" ~/.zshrc
-    sed -i "s/plugins=(git)/plugins=(\n  git\n  zsh-syntax-highlighting\n  autoupdate\n  zsh-autosuggestions\n)/g" ~/.zshrc
+    sed -i "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"powerlevel10k/powerlevel10k\"/g" ~/.zshrc
+    sed -i "s/plugins=(git)/plugins=(\n  git\n  zsh-completions\n   zsh-syntax-highlighting\n  autoupdate\n  zsh-autosuggestions\n)/g" ~/.zshrc
 
+#    echo "POWERLEVEL9K_MODE="nerdfont-complete"" >> ~/.zshrc
+#    echo "" >> ~/.zshrc
     echo "DEFAULT_USER=\$USER" >> ~/.zshrc
     echo "" >> ~/.zshrc
     echo "alias zshconfig=\"nano ~/.zshrc\"" >> ~/.zshrc
