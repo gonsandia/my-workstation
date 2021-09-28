@@ -15,7 +15,6 @@ fi
 
 if ! location=$(type -p "zsh"); then
     sudo apt install -y zsh
-    chsh -s $(which zsh)
 fi
 
 
@@ -58,5 +57,5 @@ if ! [ -a "~/.zshrc" ]; then
     echo "" >> ~/.zshrc
     echo "alias zshconfig=\"nano ~/.zshrc\"" >> ~/.zshrc
     echo "alias gbg="gb | grep $1"" >> ~/.zshrc
-    echo "alias di='docker ps | fzf | awk "{print \$1}" | xargs docker inspect'" >> ~/.zshrc
+    echo "alias di='docker ps | fzf | awk \"{print \$1}\" | xargs docker inspect'" >> ~/.zshrc
 fi
