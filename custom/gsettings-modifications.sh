@@ -13,6 +13,9 @@ gsettings set org.gnome.desktop.interface clock-show-weekday true
 # Action when pressing in the central part of a window <- None
 gsettings set org.gnome.desktop.wm.preferences action-middle-click-titlebar 'none'
 
+# Night mode <- Activated
+gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+
 # Diodon keybinding
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "'Diodon'"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "'<Primary><Shift>v'"
