@@ -6,11 +6,10 @@ echo "  Installing Z Shell + Oh My Zsh                                "
 echo "################################################################"
 echo
 
-if ! package=$(dpkg-query --list | grep "fonts-powerline"); then
+if ! package=$(fc-list | grep -i JetBrainsMono); then
     wget https://download.jetbrains.com/fonts/JetBrainsMono-2.001.zip
     unzip JetBrainsMono-2.001.zip
-    cd JetBrainsMono-2.001/
-    cp ./* /usr/local/share/fonts
+    sudo cp ./ttf/* /usr/local/share/fonts/JetBrainsMono/ -R
     fc-cache -f -v
 fi
 
@@ -44,7 +43,9 @@ if ! [ -a "~/.zshrc" ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
     git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins autoupdate
-    git clone https://github.com/romkatv/powerlevel10k.git
+
+    cd ~/.oh-my-zsh/custom/themes
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git
 
     cd ${SETUP_DIR}
 
