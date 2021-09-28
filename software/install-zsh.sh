@@ -50,7 +50,7 @@ if ! [ -a "~/.zshrc" ]; then
     cd ${SETUP_DIR}
 
     sed -i "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"powerlevel10k\/powerlevel10k\"/g" ~/.zshrc
-    sed -i "s/plugins=(git)/plugins=(\n  git\n  zsh-completions\n   zsh-syntax-highlighting\n  autoupdate\n  zsh-autosuggestions\n)/g" ~/.zshrc
+    sed -i "s/plugins=(git)/plugins=(\n  git\n  zsh-completions\n  zsh-syntax-highlighting\n  autoupdate\n  zsh-autosuggestions\n)/g" ~/.zshrc
 
 #    echo "POWERLEVEL9K_MODE="nerdfont-complete"" >> ~/.zshrc
 #    echo "" >> ~/.zshrc
@@ -60,5 +60,3 @@ if ! [ -a "~/.zshrc" ]; then
     echo "alias gbg="gb | grep $1"" >> ~/.zshrc
     echo "alias di='docker ps | fzf | awk "{print \$1}" | xargs docker inspect'" >> ~/.zshrc
 fi
-
-p10k configure
